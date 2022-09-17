@@ -11,7 +11,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                 <form method="POST" action="{{ route('insereProduto') }}"  enctype="multipart/form-data">
+                <form method="POST" action="../atualiza/{{$produto['id']}}" enctype="multipart/form-data">
                     @csrf
                  <div class="form-group">
                     <label for="nome">Nome</label>

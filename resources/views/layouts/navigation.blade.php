@@ -13,12 +13,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('cadastraProduto')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('cadastraProduto')" :active="request()->routeIs('cadastraProdutos')">
                         {{ __('Cadastrar') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('listarProduto')" :active="request()->routeIs('listarProduto')">
+                        {{ __('Ver Produtos') }}
+                    </x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->

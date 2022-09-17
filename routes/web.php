@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\produtoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +25,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/cadastra', [produtoController::class, 'cadastra'])->name('cadastraProduto');
+Route::get('/cadastra', [produtoController::class, 'cadastra'])->middleware('auth')->name('cadastraProduto');
+Route::post('/insere', [produtoController::class, 'insere'])->name('insereProduto');
+
+Route::get('/listar', [produtoController::class, 'listar'])->name('listarProduto');
+
+Route::get('/edita/{id}', [produtoController::class, 'edita'])->name('editaProduto');
+Route::post('/atualiza/{id}', [produtoController::class, 'atualiza'])->name('atualizaProduto');
+
+Route::get('/apaga/{ID}', [produtoController::class, 'apaga'])->middleware('auth')->name('apagaProduto');
